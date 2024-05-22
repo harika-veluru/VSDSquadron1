@@ -5,13 +5,11 @@ TASK1
 The task was to install RISC-V toolchain and the installation is done.
 
 Then the task was to complile the c program which calculates the sum from 1 to n.For this the command to open is "gedit sum1ton.c".
-
-
-![WhatsApp Image 2024-05-21 at 9 15 40 PM](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/c0db19f5-9787-4ea6-84f1-0e76102e7ef0)
-
 And after the code is written for sum of integers we need to compile it and the following commands were used to accomplish the same.After the compilation the sum value will be printed as shown below.The command to display the output is "./a.out".
 
 ![WhatsApp Image 2024-05-21 at 9 16 54 PM](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/22081e20-03fb-4d4a-a331-5284ac627e41)
+
+![WhatsApp Image 2024-05-21 at 9 15 40 PM](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/c0db19f5-9787-4ea6-84f1-0e76102e7ef0)
 
 Next to compile the same code with RISC-V compiler.
 For that we need to open the code in terminal itself.Command to open is "cat sum1ton.c" as shown below.
