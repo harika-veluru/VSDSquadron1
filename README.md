@@ -11,10 +11,12 @@ And after the code is written for sum of integers we need to compile it and the 
 
 ![WhatsApp Image 2024-05-21 at 9 15 40 PM](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/c0db19f5-9787-4ea6-84f1-0e76102e7ef0)
 
+![WhatsApp Image 2024-05-21 at 9 16 54 PM](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/6ac14dcc-ce01-4e47-936c-e905dd818197)
+
 Next to compile the same code with RISC-V compiler.
 For that we need to open the code in terminal itself.Command to open is "cat sum1ton.c" as shown below.
 
-![WhatsApp Image 2024-05-21 at 9 16 54 PM](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/6ac14dcc-ce01-4e47-936c-e905dd818197)
+![WhatsApp Image 2024-05-21 at 9 19 04 PM (1)](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/11f76780-7e05-4eb3-995d-3a65ea1c041d)
 
 Then the following command is used to create .o file as shown below.
 
