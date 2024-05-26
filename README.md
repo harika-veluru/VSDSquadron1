@@ -332,17 +332,29 @@ In binary, it would be:
 
 "Identify various RISC-V instruction type (R, I, S, B, U, J) and exact 32-bit instruction code in the instruction type format for below RISC-V instructions 
 ADD r6, r2, r1(R-type)
-SUB r7, r1, r2(R-type)
+
+SUB r7, r1, r2(R-type
+
 AND r8, r1, r3(R-type)
+
 OR r9, r2, r5(R-type)
+
 XOR r10, r1, r4(R-type)
+
 SLT r11, r2, r4(R-type)
+
 ADDI r12, r4, 5(I-type)
+
 SW r3, r1, 2(S-type)
+
 SRL r16, r14, r2(R-type)
+
 BNE r0, r1, 20(B-type)
+
 BEQ r0, r0, 15(B-type)
+
 LW r13, r1, 2(I-type)
+
 SLL r15, r1, r2(R-type)
 
 
