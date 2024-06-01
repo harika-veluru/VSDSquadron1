@@ -357,5 +357,111 @@ LW r13, r1, 2(I-type)
 
 SLL r15, r1, r2(R-type)
 
+TASK3
+
+In this task we were assigned to execute the instructions in the platform that were given in task2.
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/73cf043c-821d-47fc-8de7-e0bb104ae706)
+As we know RISCV can execute all the basic instructions like add,sub,and,xor,beq we are verifying all these instructions.
+
+Icarus Verilog, often abbreviated as iverilog, is a popular open-source Verilog simulation and synthesis tool. Verilog is a hardware description language (HDL) used to model electronic systems. Icarus Verilog allows developers and engineers to write, compile, and simulate Verilog code, making it an essential tool for digital design verification and testing.
+
+ Icarus Verilog can simulate complex Verilog designs, allowing users to verify the behavior of their digital circuits before physical implementation.
+
+GTKWave
+
+GTKWave is an open-source waveform viewer designed for use with digital simulation output. It is often used in conjunction with simulation tools like Icarus Verilog to visualize the signal changes over time within a digital circuit.
+
+Waveform Viewing: Allows users to view and analyze the output waveforms from digital simulations, providing insights into the timing and functionality of their designs.
+Support for Multiple Formats: It supports several file formats including VCD (Value Change Dump), LXT, FST, and GHW, among others.
+So these two need to be installed as shown below.
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/d5592f32-86cc-43c3-b7bf-58dfdde750fc)
+
+So now to execute all of this we need verilog file and its test bench,we were given a github repo.
+So the main module and its testbench  were copied in to my repo as shown below.
+
+https://github.com/harika-veluru/rv32i1.git
+
+So the main module is iiitb_rv32i.v and the test bench is iiitb_rv32i_tb.v 
+
+  
+MEM[0] <= 32'h02208300;         // add r6,r1,r2.(i1)
+MEM[1] <= 32'h02209380;         //sub r7,r1,r2.(i2)
+MEM[2] <= 32'h0230a400;         //and r8,r1,r3.(i3)
+MEM[3] <= 32'h02513480;         //or r9,r2,r5.(i4)
+MEM[4] <= 32'h0240c500;         //xor r10,r1,r4.(i5)
+MEM[5] <= 32'h02415580;         //slt r11,r2,r4.(i6)
+MEM[6] <= 32'h00520600;         //addi r12,r4,5.(i7)
+MEM[7] <= 32'h00209181;         //sw r3,r1,2.(i8)
+MEM[8] <= 32'h00208681;         //lw r13,r1,2.(i9)
+MEM[9] <= 32'h00f00002;         //beq r0,r0,15.(i10)
+MEM[25] <= 32'h00210700;         //add r14,r2,r2.(i11)
+
+These corresponding instructions which are 32 bit are executed.
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/e579ca01-b104-40ec-a506-6207a06ced3c)
+
+Now rv32i1 has both the main module and the testbench as shown above
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/14b1da07-8c07-4eed-9520-f0dfeade413a)
+
+The command to open the waveform is
+
+iverilog -o rv32i1 iiitb_rv32i.v iiitb_rv32i_tb.v
+./rv32i1
+
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/cf3d99f3-b6a4-4326-8ca6-1b3420e307aa)
+
+Now the environment for simulation opens and lets see all the instructions present in the above verilog code.
+
+The instructions here are hardcoded.
+1)ADD 
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/243ddfca-6b72-479c-b7d0-bd3dcebd4368)
+
+2)SUB
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/bfbb08f7-ffdb-45a6-87b6-e15bd89819ed)
+
+3)AND
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/30cd2635-e4f1-4b2d-a526-318a73ec8425)
+
+4)OR
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/bb672290-5413-4efd-b2ac-02a4a79eac70)
+
+5)XOR
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/6ea42ddd-2bf7-470a-b925-f8ad4b4a788f)
+
+6)SLT
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/c3bddc3f-f56d-4b08-aff7-6e83da95182e)
+
+7)ADDI
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/9f858d7e-d207-4332-b589-bb26f7fd2c4a)
+
+8)SW
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/26ab5565-3344-4952-8ca3-8d0b7a8d1288)
+
+9)LW
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/26b83927-0757-4e3d-ae4e-a06126359ba9)
+
+10)BEQ
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/9410dba7-6844-48b2-8a04-6f2dea34cf93)
+
+
+
+Next the yosys install was done using sudo apt install yosys
+
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/d2967a86-a75b-4432-aad1-cd0269f8c798)
+
+Next script.ys was created and the following contents were written and the command to open script is "nano script.ys"
+
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/2ddb4967-e405-480d-86b4-71ba5806d347)
+
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/c031c55f-a127-41f7-b5d0-0211176c3b46)
+
+The synthesis.v file is created as shown above.
+
+
+
+
+
+
+
+
 
 
