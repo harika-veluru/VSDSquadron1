@@ -361,6 +361,7 @@ TASK3
 
 In this task we were assigned to execute the instructions in the platform that were given in task2.
 ![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/73cf043c-821d-47fc-8de7-e0bb104ae706)
+
 As we know RISCV can execute all the basic instructions like add,sub,and,xor,beq we are verifying all these instructions.
 
 Icarus Verilog, often abbreviated as iverilog, is a popular open-source Verilog simulation and synthesis tool. Verilog is a hardware description language (HDL) used to model electronic systems. Icarus Verilog allows developers and engineers to write, compile, and simulate Verilog code, making it an essential tool for digital design verification and testing.
