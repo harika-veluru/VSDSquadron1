@@ -480,10 +480,14 @@ The components required are
 5)connecting wires.
 
 I am using 2 push buttons that are used as select buttons,
-if pushbutton1 is off and pushbutton2 is also off then led1 will glow.
-if pushbutton1 is off and pushbutton2 is on then led2 will glow.
-if pushbutton1 is on and pushbutton2 is off then led3 will glow.
-if pushbutton1 and pushbutton2 is on then led4 will glow.
+
+a)If pushbutton1 is off and pushbutton2 is also off then led1 will glow.
+
+b)If pushbutton1 is off and pushbutton2 is on then led2 will glow.
+
+c)If pushbutton1 is on and pushbutton2 is off then led3 will glow.
+
+d)If pushbutton1 and pushbutton2 is on then led4 will glow.
 
 
 
