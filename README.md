@@ -459,10 +459,31 @@ The synthesis.v file is created as shown above.
 
 
 
+TASK4
 
+To describe a basic digital circulit to implement on vsdquadronmini
 
+so the circuit i have choosen is 1:4 demultiplexer
 
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/133844a6-c4c5-4a93-9ac1-5692a4142262)
 
+![image](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/3be16cac-b6c7-40f6-af87-b5e712b89d48)
+
+I have drawn the circuit using draw.io 
+
+The components required are 
+
+1)VSD quadronmini.
+2)Breadboard.
+3)pushbuttons.
+4)leds.
+5)connecting wires.
+
+I am using 2 push buttons that are used as select buttons,
+if pushbutton1 is off and pushbutton2 is also off then led1 will glow.
+if pushbutton1 is off and pushbutton2 is on then led2 will glow.
+if pushbutton1 is on and pushbutton2 is off then led3 will glow.
+if pushbutton1 and pushbutton2 is on then led4 will glow.
 
 
 
