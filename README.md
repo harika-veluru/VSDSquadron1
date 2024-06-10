@@ -469,7 +469,6 @@ so the circuit i have choosen is 1:4 demultiplexer
 
 ![task5](https://github.com/harika-veluru/VSDSquadron1/assets/136460261/244d413a-10cd-421b-b88e-9db09d8596b1)
 
-I have drawn the circuit using draw.io 
 
 The components required are 
 
