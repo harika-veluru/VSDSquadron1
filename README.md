@@ -491,9 +491,8 @@ d)If pushbutton1 and pushbutton2 is on then led1 and led2 will glow.
 
 
 TASK5
-To implement 1:4 demux on VSDSquadronMini.
-The following code was used to implement the above said circuit.
 
-code
+
+
 
 
