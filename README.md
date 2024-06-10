@@ -492,8 +492,110 @@ d)If pushbutton1 and pushbutton2 is on then led1 and led2 will glow.
 
 TASK5
 
+Overview
 
-https://github.com/harika-veluru/VSDSquadron1/assets/136460261/4ec96efa-67f2-479a-aa16-95553dd9f696
+The project i am implementing is 1:4 demultiplexer where i have two pushbuttons as my control inputs that is s0 and s1,and my data input that is in is always made 1 so that the output is now completely controlled by so and s1 
+
+Here for the output i have used 2 leds so the possible combinations are
+
+1)0,0-led1 off,led2 off.
+
+2)0,1-led1 off,led2 on.
+
+3)1,0-led1 on,led2 off.
+
+4)1,1-both ed1 and led2 will be on.
+
+
+The same specified functionality was been implemented on VSDSquadronMini in the extension platform.io
+
+The code that was written in main.c file is shown below
+
+WORKING CODE
+```c
+#include <stdio.h>
+#include <debug.h>
+#include <ch32v00x.h>
+
+// Defining the Logic Gate Function
+uint8_t and(uint8_t bit1, uint8_t bit2) {
+    uint8_t out = bit1 & bit2;
+    return out;
+}
+
+uint8_t not(uint8_t bit1) {
+    uint8_t out = ~bit1 & 0x01;
+    return out;
+}
+
+void GPIO_Config(void) {
+    GPIO_InitTypeDef GPIO_InitStructure = {0}; // structure variable used for GPIO configuration
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE); // to enable the clock for port D
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE); // to enable the clock for port C
+    
+    // Input Pins Configuration
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU; // Defined as Input Type
+    GPIO_Init(GPIOD, &GPIO_InitStructure);
+
+    // Output Pins Configuration
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; // Defined Output Type
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; // Defined Speed
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
+}
+
+// The MAIN function responsible for the execution of program
+int main() {
+    uint8_t in, s0, s1; // Declared the required variables
+    uint8_t a1, a, b1, b, c1, c, d1, d, x, y;
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+    SystemCoreClockUpdate();
+    Delay_Init();
+    GPIO_Config();
+
+    while (1) {
+        s0 = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_2); // pushbutton1
+        s1 = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_3); // pushbutton2
+        in = 1; // in is always 1
+
+        x = not(s0);
+        y = not(s1);
+
+        a1 = and(x, y);
+        a = and(a1, in);
+
+        b1 = and(x, s1);
+        b = and(b1, in);
+
+        c1 = and(s0, y);
+        c = and(c1, in);
+
+        d1 = and(s0, s1);
+        d = and(d1, in);
+
+        // Set the LEDs based on the values of a, b, c, d
+        if (a == 1) {
+            GPIO_WriteBit(GPIOC, GPIO_Pin_0, SET); // LED1 off
+            GPIO_WriteBit(GPIOC, GPIO_Pin_1, SET); // LED2 off
+        } else if (b == 1) {
+            GPIO_WriteBit(GPIOC, GPIO_Pin_0, RESET); // LED1 off
+            GPIO_WriteBit(GPIOC, GPIO_Pin_1, SET);   // LED2 on
+        } else if (c == 1) {
+            GPIO_WriteBit(GPIOC, GPIO_Pin_0, SET);   // LED1 on
+            GPIO_WriteBit(GPIOC, GPIO_Pin_1, RESET); // LED2 off
+        } else if (d == 1) {
+            GPIO_WriteBit(GPIOC, GPIO_Pin_0, RESET);   // LED1 on
+            GPIO_WriteBit(GPIOC, GPIO_Pin_1, RESET);   // LED2 on
+        }
+    }
+}
+```
+https://github.com/harika-veluru/VSDSquadron1/assets/136460261/ff559962-b881-4eaa-899b-d533a67c690f
+
+
+
+
 
 
 
