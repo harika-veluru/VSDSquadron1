@@ -493,6 +493,11 @@ d)If pushbutton1 and pushbutton2 is on then led1 and led2 will glow.
 TASK5
 
 
+https://drive.google.com/file/d/1HXUYcj9VfzW85eFtvY5a_lPWUhnqlliB/view?usp=drivesdk
+
+
+
+
 
 
 
